@@ -45,7 +45,7 @@ simulated function InitRow ()
 		strTitle = class'UIUtilities_Text'.static.GetColoredText(SitRepTemplate.GetFriendlyName(), ColorState);
 
 		Title.SetTitle(strTitle);
-		Description.SetText(SitRepTemplate.GetDescriptionExpanded());
+		Description.SetText(GetSitRepDescription());
 	}
 	else
 	{
@@ -54,7 +54,7 @@ simulated function InitRow ()
 		Description.SetPosition(10, 27);
 
 		Title.SetSubTitle(SitRepEffectTemplate.GetFriendlyName());
-		Description.SetText(SitRepEffectTemplate.GetDescriptionExpanded());
+		Description.SetText(GetEffectDescription());
 	}
 
 	Title.SetWidth(Width - Title.X);
@@ -65,4 +65,24 @@ simulated protected function OnDescriptionSizeRealized()
 {
 	SetHeight(Description.Y + Description.Height);
 	UIBetterSitRepDetails(GetParent(class'UIBetterSitRepDetails')).RowRealized(self);
+}
+
+simulated protected function string GetSitRepDescription ()
+{
+	if (Function'XComGame.X2SitRepTemplate.GetDescriptionExpanded' != none)
+	{
+		return SitRepTemplate.GetDescriptionExpanded();
+	}
+
+	return SitRepTemplate.Description;
+}
+
+simulated protected function string GetEffectDescription ()
+{
+	if (Function'XComGame.X2SitRepEffectTemplate.GetDescriptionExpanded' != none)
+	{
+		return SitRepEffectTemplate.GetDescriptionExpanded();
+	}
+
+	return SitRepEffectTemplate.Description;
 }
