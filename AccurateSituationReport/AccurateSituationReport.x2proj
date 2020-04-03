@@ -24,6 +24,18 @@
     <Content Include="Config\XComEngine.ini" />
     <Content Include="Config\XComGame.ini" />
     <Content Include="Localization\AccurateSituationReport.int" />
+    <Content Include="Src\AccurateSituationReport\Classes\UIBetterSitRepDetails.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\AccurateSituationReport\Classes\UIBetterSitRepDetails_Row.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\AccurateSituationReport\Classes\UIListener_SitRepInformation.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\AccurateSituationReport\Classes\UIVerticalListItemBase.uc">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Src\AccurateSituationReport\Classes\X2DownloadableContentInfo_AccurateSituationReport.uc" />
   </ItemGroup>
   <!-- The weird stuff below (until Target) is required or otherwise ModBuddy project breaks ¯\_(ツ)_/¯ P.S. Also don't try to make it more sane -->
